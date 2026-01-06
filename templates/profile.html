@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User Profile - SolveIt">
+    <title>Profile - SolveIt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div>
+                    <h1>🔧 SolveIt</h1>
+                    <p class="subtitle">User Profile</p>
+                </div>
+                <div class="user-info">
+                    <a href="/" class="btn btn-link">Dashboard</a>
+                    <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="profile-content">
+            <section class="profile-card">
+                <h2>Account Information</h2>
+                <div id="userInfo" class="user-details">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <section class="profile-card">
+                <h2>Change Password</h2>
+                <form id="passwordForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password:</label>
+                        <input 
+                            type="password" 
+                            id="currentPassword" 
+                            name="currentPassword" 
+                            placeholder="Enter current password"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password:</label>
+                        <input 
+                            type="password" 
+                            id="newPassword" 
+                            name="newPassword" 
+                            placeholder="Enter new password (min 6 characters)"
+                            required
+                            minlength="6"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password:</label>
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            placeholder="Confirm new password"
+                            required
+                            minlength="6"
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Change Password</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+</body>
+</html>
+
